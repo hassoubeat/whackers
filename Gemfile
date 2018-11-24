@@ -76,3 +76,6 @@ gem 'therubyracer', platforms: :ruby
 gem 'trigram'
 # 文字列のファジー比較を行うGem
 gem "levenshtein"
+
+# ERB HAML間のファイル変換を行うコマンドを扱えるようになるGem
+gem 'erb2haml'
