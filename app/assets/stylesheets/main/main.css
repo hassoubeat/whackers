@@ -1,0 +1,92 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+  background-color: #90a4ae;
+  color: #263238;
+}
+
+header, main, footer {
+  padding-left: 300px;
+}
+
+nav.top-nav {
+  height: 110px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-bottom: 1px solid rgba(0,0,0,0.14);
+  background-color: transparent;
+}
+
+nav.top-nav h2.header {
+  margin: 0;
+  padding-top: 32px;
+}
+
+.header {
+  color: #263238;
+  font-weight: 200;
+}
+
+.sidenav {
+  background-color: gray;
+}
+
+a.sidenav-trigger.top-nav i {
+  font-size: 32px;
+}
+
+a.sidenav-trigger.top-nav {
+  position: absolute;
+  text-align: center;
+  height: 48px;
+  width: 48px;
+  top: 35px;
+  float: none;
+  margin-left: 1.5rem;
+  color: #263238;
+  font-size: 36px;
+  z-index: 2;
+}
+
+@media only screen and (max-width: 600px) {
+  header, main, footer {
+    padding-left: 0;
+  }
+  nav .nav-wrapper {
+    text-align: center;
+  }
+
+  .sidenav {
+    display: none;
+    width: 70% !important;
+  }
+
+  a.sidenav-trigger.top-nav {
+    left: 0;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  nav.top-nav h2 {
+    font-size: 2.50rem;
+  }
+
+  nav.top-nav h2.header {
+    margin: 0;
+    padding-top: 38px;
+  }
+}

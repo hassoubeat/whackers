@@ -1,11 +1,68 @@
 !!!
-%html
+%html{lang: "ja"}
   %head
+    %meta{name:"viewport", content:"width=device-width,initial-scale=1.0"}
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title Whackers
+    %title (w)hackers
     = csrf_meta_tags
     = csp_meta_tag
+    -# application.css
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    -# main.css
+    = stylesheet_link_tag    'main/main', media: 'all', 'data-turbolinks-track': 'reload'
+    -# materialize icons
+    %link{rel: "stylesheet", href: "https://fonts.googleapis.com/icon?family=Material+Icons"}
+
+    -# application.js
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    -# main.js
+    = javascript_include_tag 'main/main', 'data-turbolinks-track': 'reload'
+
   %body
-    = yield
+    %header
+      %nav.top-nav.hide-on-med-and-up
+        %div.container
+          %div.nav-wrapper
+            %div.row
+              %div.col.s12.m10.offset-m1
+                %h2.header (w)hackers
+      %div.container
+        %a{href:"#", "data-target" => "nav-mobile", class:"top-nav sidenav-trigger full hide-on-med-and-up"}
+          %i.material-icons menu
+        %ul{id:"nav-mobile", class:"sidenav blue-grey lighten-4", style:"transform: translateX(0px);"}
+          %li.logo
+            %a{href:"#", style:"height: initial;"}
+              %img{src:"https://s3-ap-northeast-1.amazonaws.com/hassoubeat.com/(*)hackrs_logo.png", width:"100%"}
+          %li
+            .div.divider
+          %li
+            %a{href:"#", class:"waves-effect waves-teal"}
+              %i.material-icons vpn_lock
+              (w) hack
+          %li
+            %a{href:"#", class:"waves-effect waves-teal"}
+              %i.material-icons grade
+              grade
+          %li
+            .div.divider
+          %li
+            %a{href:"#", class:"waves-effect waves-teal"}
+              %i.material-icons build
+              hacker setting
+          %li
+            %a{href:"#", class:"waves-effect waves-teal"}
+              %i.material-icons build
+              (w) setting
+          %li
+            .div.divider
+          %li
+            %a{href:"#", class:"waves-effect waves-teal"}
+              %i.material-icons account_box
+              Account
+          %li
+            %a{href:"#", class:"waves-effect waves-teal"}
+              %i.material-icons keyboard_return
+              Logout
+    %main
+      = yield
+

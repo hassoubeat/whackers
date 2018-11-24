@@ -1,2 +1,50 @@
 class ApplicationController < ActionController::Base
+  protect_from_forgery with: :exception
+
+  helper_method :login_user?
+
+  #before_action :login_check
+  before_action :init_action
+  around_action :around_logger
+
+  def index
+    render template: 'index'
+  end
+
+  private
+
+  # 汎用的な初期化処理
+  def init_action
+    # ログインしていた場合、テンプレート変数にログインユーザのデータをセット
+    if session[:user_id]
+      @current_user = User.find(session[:user_id])
+    end
+  end
+
+  # アクションの前後でログを出力
+  def around_logger
+    method = request.method
+    request_url = request.url
+    logger.debug('START【' + method + '】:' + request_url + ", TIME:" + Time.now.to_s)
+    yield
+    logger.debug(' END 【' + method + '】:' + request_url + ", TIME:" + Time.now.to_s)
+  end
+
+  protected
+
+  # ログインチェックフィルター
+  def login_check
+    unless session[:user_id]
+      render template: 'info/index', layout: "login"
+    end
+  end
+
+  # ログイン本人チェック
+  def login_user?(user_id)
+    if (session[:user_id] == user_id)
+      return true
+    else
+      return false
+    end
+  end
 end
