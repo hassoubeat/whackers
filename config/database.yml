@@ -14,12 +14,12 @@ default: &default
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
-  password:
-  socket: /tmp/mysql.sock
+  password: Arialove0
+  host: 52.198.77.153
 
 development:
   <<: *default
-  database: whackers_development
+  database: whackers_dev
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: whackers_production
+  database: whackers_pro
   username: whackers
   password: <%= ENV['WHACKERS_DATABASE_PASSWORD'] %>

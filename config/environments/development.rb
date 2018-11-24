@@ -58,4 +58,10 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+  # セッション保存にRedisを利用する
+  config.session_store :redis_store, servers: 'redis://localhost:6379/0', expire_in: 60.minutes
+
+  # ActionCable(WebSocket)の通信をどのアクセス元からでも許可する
+  config.action_cable.allowed_request_origins = [/http:\/\/example.*/]
 end
