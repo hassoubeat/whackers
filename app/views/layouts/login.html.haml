@@ -1,0 +1,37 @@
+!!!
+%html{lang: "ja"}
+  %head
+    %meta{name:"viewport", content:"width=device-width,initial-scale=1.0"}
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title (w)hackers
+    = csrf_meta_tags
+    = csp_meta_tag
+    -# application.css
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    -# login.css
+    = stylesheet_link_tag    'auth/login', media: 'all', 'data-turbolinks-track': 'reload'
+    -# materialize icons
+    %link{rel: "stylesheet", href: "https://fonts.googleapis.com/icon?family=Material+Icons"}
+
+    -# application.js
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    -# login.js
+    = javascript_include_tag 'auth/login', 'data-turbolinks-track': 'reload'
+
+  %body
+    %main
+      %div.container
+        %div.row.center
+          %a{href: "/"}
+            %img{src:"https://s3-ap-northeast-1.amazonaws.com/hassoubeat.com/(*)hackrs_logo.png", class:"logo"}
+        %div.row
+          -if flash[:info]
+            %div.col.s12.m10.offset-m1
+              %div.card-panel.info
+                %span= flash[:info]
+          -if flash[:error]
+            %div.col.s12.m10.offset-m1
+              %div.card-panel.error
+                %span= flash[:error]
+          = yield
+

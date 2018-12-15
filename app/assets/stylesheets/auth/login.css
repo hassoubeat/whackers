@@ -10,14 +10,37 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require materialize
+ *= require_tree .
  *= require_self
  */
 
-.info {
-  background-color: #90caf9;
+body {
+  background-color: #eeeeee;
+  /* background-color: #90a4ae; */
 }
 
-.error {
-  background-color: #f8bbd0;
+#login_btn {
+  background-color: #4db6ac !important;
+  color: #FFFFFF !important;
+}
+
+#user_create_btn {
+  background-color: #039be5 !important;
+  color: #FFFFFF !important;
+}
+
+#signup_btn {
+  background-color: #e57373 !important;
+  color: #FFFFFF !important;
+}
+
+#home_btn {
+  background-color: #e57373 !important;
+  color: #FFFFFF !important;
+}
+
+ @media only screen and (max-width: 600px) {
+  .logo {
+    width: 100%;
+  }
 }

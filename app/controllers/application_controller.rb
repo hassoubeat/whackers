@@ -3,12 +3,16 @@ class ApplicationController < ActionController::Base
 
   helper_method :login_user?
 
-  #before_action :login_check
+  before_action :login_check
   before_action :init_action
   around_action :around_logger
 
   def index
     render template: 'index'
+  end
+
+  def raise_not_found
+    raise ActionController::RoutingError, "No route matches #{params[:unmatched_route]}"
   end
 
   private
@@ -35,7 +39,7 @@ class ApplicationController < ActionController::Base
   # ログインチェックフィルター
   def login_check
     unless session[:user_id]
-      render template: 'info/index', layout: "login"
+      redirect_to(:login_form)
     end
   end
 
