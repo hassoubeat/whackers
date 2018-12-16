@@ -30,15 +30,30 @@ class UsersController < ApplicationController
     @user.is_auth = false;
     @user.is_valid = true;
 
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to @user, info: 'アカウントを作成しました' }
-        format.json { render :show, status: :created, location: @user }
-      else
-        format.html { render :new, layout: "login" }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+    # バリデーションチェック
+    if @user.invalid?
+      render :new, layout: "login" and return
     end
+
+    # Redisに保存するためにハッシュデータの作成
+    user_hash = @user.attributes
+
+    # Redisに登録する際のランダムなkey値を取得
+    rand_param = SecureRandom.hex
+    key = REDIS_USER_UNAUTH_PREFIX + rand_param
+
+    # Redisにユーザ情報を保存
+    redis = Redis.new
+    redis.multi do
+      redis.mapped_hmset key, user_hash
+      redis.expire(key, REDIS_USER_UNAUTH_EXPIRE)
+    end
+    logger.debug("email:" + @user.email + ", Redis_key:" + key);
+
+    # 認証メールの送付
+    EmailCheckMailer.send_user_email_check(user_hash, rand_param).deliver
+
+    redirect_to @user, flash: {info: '入力頂いたメールアドレスに認証用のメールを送付致しました。1時間以内に認証を行って本登録を完了させてください。'}
   end
 
   # PATCH/PUT /users/1

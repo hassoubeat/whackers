@@ -64,4 +64,8 @@ Rails.application.configure do
 
   # ActionCable(WebSocket)の通信をどのアクセス元からでも許可する
   config.action_cable.allowed_request_origins = [/http:\/\/example.*/]
+
+  # アプリケーションのデフォルトルートの設定
+  host = 'whackers.com:9090'
+  Rails.application.routes.default_url_options[:host] = host
 end

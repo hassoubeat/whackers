@@ -22,8 +22,8 @@
         %label{for: "password_confirmation"} パスワード(確認)
       %div.col.s12.input-field
         %i.material-icons.prefix person
-        #{text_field_tag 'user[name]', @user['name'], class:"materialize-textarea"}
-        %label{for: "password_digest"} 名前(ゲーム中で利用されるユーザ名です)
+        #{text_field_tag 'user[name]', @user['name'], class:"materialize-textarea", maxlength: 10}
+        %label{for: "name"} ユーザ名(ゲーム中で利用される名称です)
     %div.row
       %div.col.s12
         %ul.tabs.info_tabs.z-depth-3

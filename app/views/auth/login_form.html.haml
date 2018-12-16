@@ -11,11 +11,5 @@
         %label{for: "password"} パスワード
     %div.row
       %div.col.s12
-        %ul.tabs.info_tabs.z-depth-3
-          %li.tab.col.s12
-            %a#login_btn.waves-effect.waves-light ログイン
-    %div.row
-      %div.col.s12
-        %ul.tabs.info_tabs.z-depth-3
-          %li.tab.col.s12
-            = link_to "サインアップ", new_user_path, :id => "signup_btn"
+        #{submit_tag "ログイン", :name => nil , :id => "login_btn", :class => "waves-effect waves-light btn"}
+        = link_to "サインアップ", new_user_path, :id => "signup_btn", :class => "waves-effect waves-light btn"

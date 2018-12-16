@@ -14,10 +14,6 @@
 //= require_self
 
 $(document).ready(function(){
-  $('#login_btn').click(function() {
-    $('#login-form').submit();
-  })
-
   $('#user_create_btn').click(function() {
     $('#singup-form').submit();
   })

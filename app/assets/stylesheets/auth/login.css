@@ -16,11 +16,9 @@
 
 body {
   background-color: #eeeeee;
-  /* background-color: #90a4ae; */
 }
 
 #login_btn {
-  background-color: #4db6ac !important;
   color: #FFFFFF !important;
 }
 

@@ -16,8 +16,10 @@
 
 .info {
   background-color: #90caf9;
+  color:#424242;
 }
 
 .error {
   background-color: #f8bbd0;
+  color:#424242;
 }

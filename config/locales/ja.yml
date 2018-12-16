@@ -29,5 +29,14 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
-  hello: "こんにちは、世界"
+ja:
+  activerecord:
+    models:
+      user: ユーザ
+    attributes:
+      user:
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード(確認)
+        name: ユーザ名
+
