@@ -62,6 +62,23 @@ a.sidenav-trigger.top-nav {
   z-index: 2;
 }
 
+h6.category-title {
+  color: #e0e0e0;
+  padding-left: 5px;
+}
+
+.card_link {
+  color: inherit;
+}
+
+.menu-card-title {
+  color: #263238 !important;
+}
+
+.card-selected {
+  background: #eeeeee;
+}
+
 @media only screen and (max-width: 600px) {
   header, main, footer {
     padding-left: 0;

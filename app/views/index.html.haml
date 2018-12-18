@@ -1,43 +1,66 @@
 %p#notice= notice
 
+%h6.category-title Game
+.div.divider
 %div.row
-  %div.col.s12.m9
-    %div.card
-      %div.card-image
-        %img{src: "https://s3-ap-northeast-1.amazonaws.com/hassoubeat.com/(*)hackrs_logo.png"}
-          %span.card-title Card Title
+  %div.col.s12.m7
+    %a{href:"#" , class:"card_link"}
+      %div.card
         %div.card-content
-          %p 他の参加者を募って、(w)hackを開始します。
+          %span.card-title.menu-card-title
+            %i.material-icons vpn_lock
+            (w)hack
+          %p (w)hackを開始します。
           %p hackerポイントを競え。
-        %div.card-action
-          %a{href: "#"} This is a link
-  %div.col.s12.m3
-    %div.card
-      %div.card-image
-        %img{src: "https://s3-ap-northeast-1.amazonaws.com/hassoubeat.com/(*)hackrs_logo.png"}
-          %span.card-title Card Title
+  %div.col.s12.m5
+    %a{href:"#" , class:"card_link"}
+      %div.card
         %div.card-content
+          %span.card-title.menu-card-title
+            %i.material-icons grade
+            Ranking
           %p hackerポイントランキングを確認します。
           %p (w)hackerの高みを目指せ。
-        %div.card-action
-          %a{href: "#"} This is a link
-  %div.col.s12.m4
-    %div.card
-      %div.card-image
-        %img{src: "https://s3-ap-northeast-1.amazonaws.com/hassoubeat.com/(*)hackrs_logo.png"}
-          %span.card-title Card Title
+%h6.category-title Setting
+.div.divider
+%div.row
+  %div.col.s12.m6
+    %a{href:"#" , class:"card_link"}
+      %div.card
         %div.card-content
-          %p (w)の設定を変更します。
-          %p admin_skillをカスタマイズして、勝利を掴め。
-        %div.card-action
-          %a{href: "#"} This is a link
-  %div.col.s12.m8
-    %div.card
-      %div.card-image
-        %img{src: "https://s3-ap-northeast-1.amazonaws.com/hassoubeat.com/(*)hackrs_logo.png"}
-          %span.card-title Card Title
-        %div.card-content
+          %span.card-title.menu-card-title
+            %i.material-icons build
+            hacker settings
           %p hackerの設定を変更します。
           %p hacker_skillをカスタマイズして、勝利を掴め。
-        %div.card-action
-          %a{href: "#"} This is a link
+  %div.col.s12.m6
+    %a{href:"#" , class:"card_link"}
+      %div.card
+        %div.card-content
+          %span.card-title.menu-card-title
+            %i.material-icons build
+            (w) settings
+          %p (w)の設定を変更します。
+          %p admin_skillをカスタマイズして、勝利を掴め。
+
+%h6.category-title Other
+.div.divider
+%div.row
+  %div.col.s12.m5
+    %a{href:"#" , class:"card_link"}
+      %div.card
+        %div.card-content
+          %span.card-title.menu-card-title
+            %i.material-icons account_box
+            User
+          %p ユーザ情報を変更します。
+          %p　
+  %div.col.s12.m7
+    %a{href:"#" , class:"card_link"}
+      %div.card
+        %div.card-content
+          %span.card-title.menu-card-title
+            %i.material-icons info_outline
+            Tutorial
+          %p (w)hackのチュートリアルを開始します。
+          %p ゲームを始める前にご確認ください。

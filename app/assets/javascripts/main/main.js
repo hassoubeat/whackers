@@ -19,5 +19,11 @@ $(document).ready(function(){
   $('.sidenav-trigger').click(function() {
     $('.sidenav').show();
   })
+
+  $('.card').hover(function() {
+    $(this).addClass('card-selected');
+  }, function() {
+    $(this).removeClass('card-selected');
+  });
 });
 

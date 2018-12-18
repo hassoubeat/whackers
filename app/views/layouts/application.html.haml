@@ -31,7 +31,7 @@
           %i.material-icons menu
         %ul{id:"nav-mobile", class:"sidenav blue-grey lighten-4", style:"transform: translateX(0px);"}
           %li.logo
-            %a{href:"#", style:"height: initial;"}
+            %a{href:"/", style:"height: initial;"}
               %img{src:"https://s3-ap-northeast-1.amazonaws.com/hassoubeat.com/(*)hackrs_logo.png", width:"100%"}
           %li
             .div.divider
@@ -58,10 +58,16 @@
           %li
             %a{href:"#", class:"waves-effect waves-teal"}
               %i.material-icons account_box
-              Account
+              User
+          %li
+            %a{href:"#", class:"waves-effect waves-teal"}
+              %i.material-icons info_outline
+              Tutorial
+          %li
+            .div.divider
           %li
             %a{href: "/logout", class:"waves-effect waves-teal"}
-              %i.material-icons keyboard_return
+              %i.material-icons exit_to_app
               Logout
     %main
       = yield
